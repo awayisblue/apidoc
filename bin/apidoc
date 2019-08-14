@@ -82,15 +82,15 @@ function transformToObject(filters) {
     if (typeof(filters) === 'string')
         filters = [ filters ];
 
-  var result = {};
-  filters.forEach(function(filter) {
-    var splits = filter.split('=');
-    if (splits.length === 2) {
-      var obj = {};
-      result[splits[0]] = path.resolve(splits[1], '');
-    }
-  });
-  return result;
+    var result = {};
+    filters.forEach(function(filter) {
+        var splits = filter.split('=');
+        if (splits.length === 2) {
+            var obj = {};
+            result[splits[0]] = path.resolve(splits[1], '');
+        }
+    });
+    return result;
 }
 
 var options = {
@@ -118,5 +118,5 @@ var options = {
 };
 
 if (apidoc.createDoc(options) === false) {
-  process.exit(1);
+    process.exit(1);
 }
